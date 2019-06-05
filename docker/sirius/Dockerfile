@@ -70,4 +70,4 @@ RUN cd /var/www/medkey && \
 	cd frontend && \
 	npm install && \
 	npm run build-prod && \
-	chmod 777 . -R
+	chmod 777 runtime/ -R && chmod 777 web/ -R

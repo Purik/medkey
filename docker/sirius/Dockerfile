@@ -69,4 +69,5 @@ RUN cd /var/www/medkey && \
 	cp .env.dev .env && \
 	cd frontend && \
 	npm install && \
-	npm run build-prod
+	npm run build-prod && \
+	chmod . -R

@@ -8,8 +8,11 @@ use app\modules\security\application\UserServiceInterface;
 use app\modules\security\models\form\UserPassword;
 use yii\base\Module;
 use app\modules\security\models\form\User as UserForm;
+use app\modules\security\models\orm\User;
 use yii\filters\AccessControl;
 use yii\web\ForbiddenHttpException;
+use app\common\data\ActiveDataProvider;
+use app\modules\security\models\finders\UserFinder;
 
 /**
  * Class UserController
@@ -18,6 +21,7 @@ use yii\web\ForbiddenHttpException;
  */
 class UserController extends Controller
 {
+	public $modelClass = User::class;
     /**
      * @var UserServiceInterface
      */
@@ -52,6 +56,7 @@ class UserController extends Controller
         ]);
     }
 
+
     /**
      * UserController constructor.
      * @param string $id
@@ -63,6 +68,27 @@ class UserController extends Controller
     {
         $this->userService = $userManager;
         parent::__construct($id, $module, $config);
+    }
+	
+	public function actionIndex($q)
+    {
+		/*
+        $modelClass = $this->modelClass;
+        $query = $modelClass::find()
+            ->where([
+                'like',
+                'login',
+                $q
+            ]);
+        $provider = \Yii::createObject([
+            'class' => ActiveDataProvider::class,
+            'query' => $query
+        ]);
+        return $provider;
+		*/
+		$form = new UserFinder();
+		$form->load(\Yii::$app->request->getBodyParams());
+		return $this->userService->getUserList($form);
     }
 
     public function actionValidateCreate()

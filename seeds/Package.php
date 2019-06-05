@@ -13,6 +13,7 @@ class Package extends Seed
     public function run()
     {
         $this->call('acl');
+		$this->call('sirius_acl');
         $this->call('user');
         $this->call('employee_seed');
         $this->call('dashboard_item' . ucwords(substr(\Yii::$app->language,0,2)));

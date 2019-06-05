@@ -15,11 +15,11 @@ class SettingsSeed extends Seed
         $this->data = [
             [
                 'key' => 'language',
-                'value' => 'en-US',
+                'value' => 'ru-RU',
             ],
             [
                 'key' => 'application_title',
-                'value' => 'Medkey',
+                'value' => 'Medkey Sirius Integration',
             ]
         ];
     }

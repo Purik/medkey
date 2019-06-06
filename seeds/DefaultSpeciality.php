@@ -13,6 +13,10 @@ class DefaultSpeciality extends Seed
             [
                 'title' => 'Default Doctor',
                 'short_title' => 'Default Doctor',
+            ],
+			[
+                'title' => 'Patient',
+                'short_title' => 'Patient',
             ]
         ];
     }

@@ -31,6 +31,24 @@ class SpecialityController extends ActiveController
     {
         return [];
     }
+	
+	public function actionIndex(q)
+    {
+        /* @var $modelClass ActiveRecordInterface */
+        $modelClass = $this->modelClass;
+        $query = $modelClass::find()
+            ->where([
+                'like',
+                'title',
+                $q
+            ]);
+        /** @var ActiveDataProvider $provider */
+        $provider = \Yii::createObject([
+            'class' => ActiveDataProvider::class,
+            'query' => $query
+        ]);
+        return $provider;
+    }
 
     public function actionValidateCreate()
     {

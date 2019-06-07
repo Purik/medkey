@@ -72,7 +72,7 @@ class UserController extends Controller
 	
 	public function actionIndex($q)
     {
-		/*
+		
         $modelClass = $this->modelClass;
         $query = $modelClass::find()
             ->where([
@@ -85,10 +85,11 @@ class UserController extends Controller
             'query' => $query
         ]);
         return $provider;
-		*/
+		/*
 		$form = new UserFinder();
 		$form->load(\Yii::$app->request->getBodyParams());
 		return $this->userService->getUserList($form);
+		*/
     }
 
     public function actionValidateCreate()

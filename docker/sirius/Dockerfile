@@ -66,7 +66,7 @@ RUN npm install npm@6.9.0 -g
 COPY . /var/www/medkey
 RUN cd /var/www/medkey && \
 	composer install && \
-	cp .env.dev .env && \
+	cp .env.sirius .env && \
 	cd frontend && \
 	npm install && \
 	npm run build-prod && \

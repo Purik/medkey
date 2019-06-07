@@ -141,4 +141,9 @@ class UserController extends Controller
     {
         return $this->asJson($this->userService->getAccessTokenByLoginAndPassword($login, $password));
     }
+	
+	public function actionGetId()
+    {
+        return \Yii::$app->getUser()->getId();
+    }
 }

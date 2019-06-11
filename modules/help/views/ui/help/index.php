@@ -12,6 +12,11 @@ $this->params['breadcrumbs'][] = $this->title;
 
 <h4>Medkey Healthcare System v<?= \Yii::$app->version; ?></h4>
 
+<p>Transcript file (Sirius connector)</p>
+<ul>
+    <li><a href="/robots/medkey/get-transcript" target="_blank">Download transcript file</a></li>
+</ul>
+
 <p>Resources:</p>
 
 <ul>

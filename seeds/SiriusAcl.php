@@ -52,21 +52,21 @@ class SiriusAcl extends Seed
                 'type' => '1',
                 'entity_type' => 'PatientService',
                 'action' => 'getPatientById',
-                'acl_role_id' => ArrayHelper::findBy($aclRoles, ['name' => 'admin'])->id
+                'acl_role_id' => ArrayHelper::findBy($aclRoles, ['name' => 'patient'])->id
             ],
             [
                 'module' => 'medical',
                 'type' => '1',
                 'entity_type' => 'ReferralService',
                 'action' => 'getReferralList',
-                'acl_role_id' => ArrayHelper::findBy($aclRoles, ['name' => 'admin'])->id
+                'acl_role_id' => ArrayHelper::findBy($aclRoles, ['name' => 'patient'])->id
             ],
             [
                 'module' => 'medical',
                 'type' => '1',
                 'entity_type' => 'ReferralService',
                 'action' => 'getReferralById',
-                'acl_role_id' => ArrayHelper::findBy($aclRoles, ['name' => 'admin'])->id
+                'acl_role_id' => ArrayHelper::findBy($aclRoles, ['name' => 'patient'])->id
             ],
         ];
     }
